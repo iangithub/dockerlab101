@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  app1:
+    image: my-web-linux
+    ports:
+      - "8001:80"
+  app2:
+    image: my-web-linux
+    ports:
+      - "8002:80"
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
